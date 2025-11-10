@@ -7,17 +7,15 @@ char *str_chr(const char *str, int ch);
 void conta_ocorrencias(const char *str, char ch, int *occurrences);
 
 int main() {
-    char *str, ch;
+    char str[130], ch;
     int count;
-    str = (char *)malloc(strlen(str) * sizeof(char));
     scanf("%[^\n]%*c %c", str, &ch);
     if (str_chr(str, ch) == NULL) {
         printf("'%c' nao pertence a '%s', portanto, nao foi possivel contar as ocorrencias.\n", ch, str);
     } else {
         conta_ocorrencias(str, ch, &count);
-        printf("'%c' aparece %d vezes em '%s'.\n", ch, count, str);
+        printf("'%c' aparece %d vez(es) em '%s'.\n", ch, count, str);
     }
-    free(str);
     return 0;
 }
 
