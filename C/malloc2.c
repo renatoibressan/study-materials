@@ -20,6 +20,7 @@ int main() {
             printf("%d", *(*(m + i) + j));
             if (j == c - 1) printf("]\n");
         }
+        free(*m);
     }
     free(m);
     return 0;
